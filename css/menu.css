@@ -29,6 +29,25 @@ nav ul li a:active {
     .logo {
         font-size: 42px;
     }
+
+    
+    @keyframes rightbarel {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes leftbarel {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg);
+        }
+    }
     
     #toggler {
         display: block;
@@ -38,11 +57,24 @@ nav ul li a:active {
         top: 15px;
         width: 42px;
         height: 42px;
-        /* mix-blend-mode: difference; */
     }
 
     #toggler-input:checked ~ #toggler {
         position: fixed;
+
+        animation-name: rightbarel;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+    }
+
+    #toggler-input:hover:not(:checked) ~ #toggler {
+        position: fixed;
+
+        animation-name: leftbarel;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
     }
 
     #toggler-input:checked ~ nav {
@@ -70,8 +102,13 @@ nav ul li a:active {
         height: 4px;
         border-radius: 2px;
         background-color: #fff;
+        box-shadow: 0 0 5px black;
         left: 50%;
         top: 50%;
+    }
+
+    #toggler-input:checked ~ #toggler>span {
+        box-shadow: initial;
     }
 
     #toggler span:nth-child(1){
@@ -86,7 +123,7 @@ nav ul li a:active {
         transform: translate(-50%, 20px);
     }
 
-    #toggler:hover span {
+    #toggler:active span {
         background-color: gray;
     }
 

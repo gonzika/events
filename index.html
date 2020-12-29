@@ -7,6 +7,7 @@
     <title>Beetroot Acadamy Events</title>
     <link rel="shortcut icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/menu.css">
 
@@ -15,6 +16,8 @@
             document.getElementById('toggler-input').click();
         }
     </script>
+
+
 </head>
 
 <body>
@@ -86,38 +89,61 @@
                     <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin
                         molestie malesuada. Estibulum ante ipsum primis in faucibus orci luctus et ultrices.</p>
                 </div>
-                <ul class="people">
-                    <li class="person">
-                        <div class="person__img"><img src="img/alex-perez.jpg" alt="Alex Perez"></div>
-                        <div class="person__name">Alex Perez</div>
-                        <div class="person__text">Creative Director at Amazing Game</div>
-                    </li>
-                    <li class="person">
-                        <div class="person__img"><img src="img/ayo-ogunseinde.jpg" alt="Ayo Ogunseinde"></div>
-                        <div class="person__name">Ayo Ogunseinde</div>
-                        <div class="person__text">Creative Director at Amazing Game</div>
-                    </li>
-                    <li class="person">
-                        <div class="person__img"><img src="img/joe-gardner.jpg" alt="Joe Gardner"></div>
-                        <div class="person__name">Joe Gardner</div>
-                        <div class="person__text">Creative Director at Amazing Game</div>
-                    </li>
-                    <li class="person">
-                        <div class="person__img"><img src="img/kyle-loftus.jpg" alt="Kyle Loftus"></div>
-                        <div class="person__name">Kyle Loftus</div>
-                        <div class="person__text">Creative Director at Amazing Game</div>
-                    </li>
-                    <li class="person">
-                        <div class="person__img"><img src="img/matheus-ferrero.jpg" alt="Matheus Ferrero"></div>
-                        <div class="person__name">Matheus Ferrero</div>
-                        <div class="person__text">Creative Director at Amazing Game</div>
-                    </li>
-                    <li class="person">
-                        <div class="person__img"><img src="img/pete-bellis.jpg" alt="Pete Bellis"></div>
-                        <div class="person__name">Pete Bellis</div>
-                        <div class="person__text">Creative Director at Amazing Game</div>
-                    </li>
-                </ul>
+
+                <div class="swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="person-slide">
+                                <div class="person__img"><img src="img/alex-perez.jpg" alt="Alex Perez"></div>
+                                <div class="person__name">Alex Perez</div>
+                                <div class="person__text">Creative Director at Amazing Game</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="person-slide">
+                                <div class="person__img"><img src="img/ayo-ogunseinde.jpg" alt="Ayo Ogunseinde"></div>
+                                <div class="person__name">Ayo Ogunseinde</div>
+                                <div class="person__text">Creative Director at Amazing Game</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="person-slide">
+                                <div class="person__img"><img src="img/joe-gardner.jpg" alt="Joe Gardner"></div>
+                                <div class="person__name">Joe Gardner</div>
+                                <div class="person__text">Creative Director at Amazing Game</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="person-slide">
+                                <div class="person__img"><img src="img/kyle-loftus.jpg" alt="Kyle Loftus"></div>
+                                <div class="person__name">Kyle Loftus</div>
+                                <div class="person__text">Creative Director at Amazing Game</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="person-slide">
+                                <div class="person__img"><img src="img/matheus-ferrero.jpg" alt="Matheus Ferrero"></div>
+                                <div class="person__name">Matheus Ferrero</div>
+                                <div class="person__text">Creative Director at Amazing Game</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="person-slide">
+                                <div class="person__img"><img src="img/pete-bellis.jpg" alt="Pete Bellis"></div>
+                                <div class="person__name">Pete Bellis</div>
+                                <div class="person__text">Creative Director at Amazing Game</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
 
                 <div class="text-center">
                     <h2>Countdown</h2>
@@ -252,7 +278,35 @@
             </ul>
         </div>
     </footer>
+
     <script src="https://kit.fontawesome.com/9763e3f958.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            slidesPerView: 3,
+
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            // scrollbar: {
+            //     el: '.swiper-scrollbar',
+            // },
+        })
+    </script>
 </body>
 
 </html>
